@@ -139,30 +139,6 @@ class PizzaBuilder extends Component
     .catch((error) => {console.log('Error fetching info', error)});
   };
 
-  //Save the pizza -> just value
-  savePizzaConfiguration = () =>
-  {
-    //Depending on the confirmation number, different operations:
-    if(this.props.pizzaBuild.confirmationNumber != 0)
-    {
-      axios.put('/savedPizza/' + this.props.pizzaBuild.confirmationNumber + ".json", {pizzaComposition: this.props.pizzaComposition})
-      .then((response) => {
-        this.props.pizzaSavedHandler(true);
-      })
-      .catch((error) => {console.log('Error saving pizza', error)});
-    }
-    else
-    {
-      //post - first time
-      axios.post('/savedPizza.json', {pizzaComposition: this.props.pizzaComposition})
-      .then((response) => {
-        this.props.pizzaSavedHandler(true);
-        this.props.pizzaConfirmationNumberHandler(response.data.name);
-      })
-      .catch((error) => {console.log('Error saving pizza', error)});
-    }
-
-  };
 
   //Open up the load window
   toggleLoadWindow = () =>
