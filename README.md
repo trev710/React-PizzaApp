@@ -1,4 +1,4 @@
-# React-PizzaMaker
+# React-PizzaMakerApp
 A single page Pizza Maker
 
 
