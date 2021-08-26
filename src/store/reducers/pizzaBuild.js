@@ -6,8 +6,7 @@ const initialState = {
   confirmationNumber: "0"
 };
 
-//Create new objects with spread operator {...} and then overwrite the property
-//that we want modified.
+//Create new objects with spread operator
 const reducer = (state = initialState, action) => {
 
   switch(action.type)
@@ -20,7 +19,6 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 
-  //Default (and for initial info feeding)
   return state;
 };
 
