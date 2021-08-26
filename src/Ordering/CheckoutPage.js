@@ -34,14 +34,14 @@ class CheckoutPage extends Component
           label: 'Address: ',
           validationPassed: true,
         },
-        // deliveryOption:{
-        //   elementType: 'select',
-        //   elementConfig:{
-        //     options: [
-        //       {value:'delivered', displayValue: 'Delivery', selected:true},
-        //       {value:'pickedup', displayValue: 'Local pickup'}
-        //     ],
-        //   },
+        deliveryOption:{
+          elementType: 'select',
+          elementConfig:{
+            options: [
+              {value:'delivered', displayValue: 'Delivery', selected:true},
+              {value:'pickedup', displayValue: 'Local pickup'}
+            ],
+          },
           value: '',
           label: 'Choose delivery method: ',
           validationPassed: true,
@@ -72,11 +72,11 @@ class CheckoutPage extends Component
             type: "checkbox",
             checked: false,
           },
-        //   value:false,
-        //   label:'Do you have a coupon code?',
-        //   validationPassed: true,
-        //   specificHandler: this.checkedCoupon,
-        // },
+          value:false,
+          label:'Do you have a coupon code?',
+          validationPassed: true,
+          specificHandler: this.checkedCoupon,
+        },
         couponCode:{
           elementType: 'input',
           elementConfig:{
