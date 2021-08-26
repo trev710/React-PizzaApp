@@ -37,17 +37,11 @@ class PizzaBuilder extends Component
 
   }
 
-
-
-
-  //Fill the pizza composition now
-  //Note: when in constructor, we need to directly modify the state!
   fillPizzaComposition = () =>
   {
     this.props.onLoadInitialComposition(this.generateEmptyPizza());
   };
 
-  //Generates an empty pizza
   generateEmptyPizza = () =>
   {
     let tempPizzaObject = {};
@@ -186,11 +180,6 @@ class PizzaBuilder extends Component
     this.props.pizzaSavedHandler(true);
   };
 
-
-  //The render method returns JSX that we print
-
-  //!Note: to cycle through an object with map (for printing in render),
-  //Use the Object.keys(theObj) tactic!
   render(){
 
     //Check if order window is allowed
@@ -222,8 +211,8 @@ class PizzaBuilder extends Component
               {orderWindow}
 
               <div className="py-5 text-center">
-                <h2>Pizza Builder</h2>
-                <p className="lead">Here you can build your pizza using the builder with the ingredients provided.</p>
+                <h2>FlatIron Pizza</h2>
+                <p className="lead">Add What Toppings You Like Here</p>
               </div>
 
               <div className="row">
@@ -254,19 +243,12 @@ class PizzaBuilder extends Component
 
 }
 
-//After the class definition -> that's when we make use of Redux
-//We need to map the state (Redux) to this component's props
 const mapStateToLocalProps = state => {
   return {
       pizzaComposition: state.pizzaReducer,
       pizzaBuild: state.pizzaBuild,
   };
 };
-
-
-
-//https://react-redux.js.org/using-react-redux/connect-mapdispatch
-
 
 const mapDispatchActionsToProps = dispatch => {
   return{
@@ -279,6 +261,4 @@ const mapDispatchActionsToProps = dispatch => {
 };
 
 
-//We still need to export it
 export default connect(mapStateToLocalProps, mapDispatchActionsToProps)(PizzaBuilder);
-// export default PizzaBuilder

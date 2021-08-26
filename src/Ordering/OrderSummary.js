@@ -7,7 +7,7 @@ const ordersummary = (props) => {
     <Modal>
           <h3>Your Order</h3>
           <br/>
-          <p>The pizza has the following ingredients:</p>
+          <p>Toppings:</p>
           <br/>
           <ul>
           {
@@ -23,12 +23,13 @@ const ordersummary = (props) => {
           }
           </ul>
           <br/>
-          <h3>Total price: {props.totalPrice}$</h3>
+          <h3>Order Total: ${props.totalPrice}</h3>
 
           <p>Continue to checkout?</p>
           <div className="checkoutButtons">
+          <button type="button" className="btn btn-primary" onClick={() => {props.history.push('/checkout')}}>Continue</button>
             <button type="button" className="btn btn-dark" onClick={() => {props.checkoutPageToggle(false)}}>Cancel</button>
-            <button type="button" className="btn btn-primary" onClick={() => {props.history.push('/checkout')}}>Continue</button>
+            
           </div>
      </Modal>
   );

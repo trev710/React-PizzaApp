@@ -1,15 +1,9 @@
 import React from 'react';
 
 const input = (props) => {
-  //Logic to determine what type of input we're going to use
   let inputElement = null;
-
-  //Switch with cases
   switch(props.type)
   {
-    //Covers input AND checkbox
-    //Checkbox - checked="checked" and disabled possible
-    //Radio buton - name="someName" when they belong to the same category
     case('input'):
     case('checkbox'):
       inputElement =
@@ -80,7 +74,6 @@ const input = (props) => {
     break;
   }
 
-  //Returns JSX, whitin variable that we declared + standard packaging
   return (
     <div className="inputElement ">
       <label className="inputElementLabel">{props.label}</label>
