@@ -1,6 +1,13 @@
-# React-PizzaMakerApp
-A single page Pizza Maker
+Pizza Parlor App:
 
+A pizza app, in which the user can select a list of ingredients to go on their pizza.  This will be a step by step format, in which the user selects a type of crust, next a sauce choice, and then cheese, followed by, finally, a selection of toppings. Each ingredient will have a base price, and as a user, you will be able to see a list of all the ingredients through a nav bar, so that there is no confusion on what will be available. In the instance that a user adds an ingredient and then decides they no longer want it, there will be an option to remove that ingredient, or simply start the dish over. The navbar will also take the user to a checkout menu to show the total cost of the created pizza.
+The core features:
+ 
+user should be able to add and remove toppings to their pizza
+user should be able to check out their pizza with a total cost added to it.
+user should be able to route to a page showing all the ingredients to them with cost
+user should be able to navigate between the checkout and pizza maker
+user should be able to see their pizza toppings as an image 
 
 ## Available Scripts
 
