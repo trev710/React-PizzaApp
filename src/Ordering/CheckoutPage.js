@@ -27,21 +27,21 @@ class CheckoutPage extends Component
         email:{
           elementType:'input',
           elementConfig:{
-            type: 'email',
-            placeholder: 'Your email',
+            type: 'address',
+            placeholder: 'Your Address',
           },
           value: '',
-          label: 'Email: ',
+          label: 'Address: ',
           validationPassed: true,
         },
-        deliveryOption:{
-          elementType: 'select',
-          elementConfig:{
-            options: [
-              {value:'delivered', displayValue: 'Delivery', selected:true},
-              {value:'pickedup', displayValue: 'Local pickup'}
-            ],
-          },
+        // deliveryOption:{
+        //   elementType: 'select',
+        //   elementConfig:{
+        //     options: [
+        //       {value:'delivered', displayValue: 'Delivery', selected:true},
+        //       {value:'pickedup', displayValue: 'Local pickup'}
+        //     ],
+        //   },
           value: '',
           label: 'Choose delivery method: ',
           validationPassed: true,
@@ -72,11 +72,11 @@ class CheckoutPage extends Component
             type: "checkbox",
             checked: false,
           },
-          value:false,
-          label:'Do you have a coupon code?',
-          validationPassed: true,
-          specificHandler: this.checkedCoupon,
-        },
+        //   value:false,
+        //   label:'Do you have a coupon code?',
+        //   validationPassed: true,
+        //   specificHandler: this.checkedCoupon,
+        // },
         couponCode:{
           elementType: 'input',
           elementConfig:{
@@ -153,7 +153,8 @@ class CheckoutPage extends Component
     const modifiedState = {...this.state.orderForm};
 
 
-    for(let i=0; i<modifiedState.regularClient.elementConfig.options.length; i++)
+    for(let i=0; 
+      i<modifiedState.regularClient.elementConfig.options.length; i++)
     {
       if(index === i)
       {
@@ -168,11 +169,7 @@ class CheckoutPage extends Component
     this.setState({orderForm: modifiedState});
   }
 
-
-  //Reset button - reset the values
   resetButtonHandler = () => {
-    //Set all values to '', uncheck check boxes,
-    //Put initial selection for the first element of radio buttons
     let copyForm = {...this.state.orderForm};
 
     for(var key in copyForm)
@@ -181,13 +178,10 @@ class CheckoutPage extends Component
 
       switch(key)
       {
-        //Special case: regular client -> No
         case 'regularClient':
           copyForm[key].elementConfig.options[0].checked = false;
           copyForm[key].elementConfig.options[1].checked = true;
         break;
-
-        //Another special case: has coupon - no by default
         case 'hasCoupon':
           copyForm[key].elementConfig.checked = false;
         break;
@@ -205,16 +199,12 @@ class CheckoutPage extends Component
       }
 
     }
-
-    //Finally, set the state
     this.setState({orderForm: copyForm}, () => {
 
-      //Step by step -> if error foudn stop, so that it's not overwritten
       if(this.state.isValid)
       {
         this.verifyInput('name');
       }
-
       if(this.state.isValid)
       {
         this.verifyInput('email');
@@ -317,9 +307,6 @@ class CheckoutPage extends Component
 
     return validity;
   }
-
-  //Standard verification that we can use for many types
-  //Rule is an object {type: '', minLength or mmaxLengh possible}
   standardVerification = (value, rule) =>
   {
     //Start from true, can only go to negative
@@ -397,20 +384,14 @@ class CheckoutPage extends Component
         }
       </div>
     );
-
-    //Let's create an array, out of which we'll map the form
     const formArray = [];
 
-    //For each key/value in orderForm object in the state
-    //Id will be key since guaranteed uniqueness
     Object.keys(this.state.orderForm).forEach(key => {
       formArray.push({
         id: key,
         details: this.state.orderForm[key]
       });
     });
-
-    //Determine class for error
     let errorClassForm = "checkoutForm ";
 
     if(!this.state.isValid)

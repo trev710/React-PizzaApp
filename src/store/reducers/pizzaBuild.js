@@ -5,7 +5,6 @@ const initialState = {
   isSaved: false,
   confirmationNumber: "0"
 };
-
 //Create new objects with spread operator
 const reducer = (state = initialState, action) => {
 
