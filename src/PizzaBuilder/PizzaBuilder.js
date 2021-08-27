@@ -9,9 +9,9 @@ import ShowScreen from './ShowScreen/ShowScreen.js';
 import OrderSummary from './../Ordering/OrderSummary.js';
 import PizzaLoader from './../Loading/PizzaLoader.js';
 
-//Connect with Redux
+// Connect with Redux
 import { connect } from 'react-redux';
-//Import the actions
+// Import the actions
 import * as actions from './../store/actions/actions.js';
 
 
