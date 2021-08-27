@@ -9,8 +9,7 @@ const showScreen = (props) => {
           </div>
 
           {
-            //Note how the code in {} in jsx can be pure javascript, with comments
-            //and even variable logic
+        
             Object.keys(props.pizzaComposition).map((ingredientKey, index) => {
                 let tempArrayJSX = [];
                 for(let j=0; j<props.pizzaComposition[ingredientKey]; j++)
