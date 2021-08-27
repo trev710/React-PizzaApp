@@ -19,30 +19,8 @@ const IngredientBlock = (props) => {
     classesButtonSave += " disabled";
   }
 
-  /*
-    Possible options for the saving of the pizza:
-    - number is 0, is not saved -> no text
-    - number is non-zero, not saved -> unsaved [red]
-    - number is non-zero, saved -> saved, show number [green]
-  */
   let text = "";
   let color = {color: 'black'};
-
-  if(props.pizzaConfirmationNumber !== 0)
-  {
-    if(!props.savingEnabled)
-    {
-      color = {color: 'green'};
-      text = "Your pizza configuration has been saved. Your number is: " + props.pizzaConfirmationNumber;
-    }
-    else
-    {
-      color = {color: 'red'};
-      text = "Your pizza configuration hasn't been saved.";
-    }
-  }
-
-
 
 
   return(
@@ -72,11 +50,11 @@ const IngredientBlock = (props) => {
           <strong>{props.totalPrice}$</strong>
         </li>
         <li className="list-group-item d-flex justify-content-between">
-          <button type="button" className={classesButtonSave} onClick={() => {if(props.checkoutEnabled && props.savingEnabled){props.saveHandler();}}}>Save Pizza</button>
+          {/* <button type="button" className={classesButtonSave} onClick={() => {if(props.checkoutEnabled && props.savingEnabled){props.saveHandler();}}}>Save Pizza</button> */}
           <button type="button" className={classesButtonCheckout} onClick={() => {if(props.checkoutEnabled){props.checkoutHandler(true);}}}>Checkout</button>
         </li>
         <li className="list-group-item d-flex justify-content-between">
-        <button type="button" className="btn btn-dark" onClick={props.toggleLoadWindow}>Load pizza</button>
+        {/* <button type="button" className="btn btn-dark" onClick={props.toggleLoadWindow}>Load pizza</button> */}
         </li>
       </ul>
       <p className="notificationSaving" style={color}>
