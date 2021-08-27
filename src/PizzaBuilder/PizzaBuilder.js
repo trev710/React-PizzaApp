@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { Component } from 'react';
 
 import { ingredientsInfoStatic, pizzaCrustImage } from './../Special/IngredientsInfo.js';
@@ -105,20 +104,7 @@ class PizzaBuilder extends Component
 
   componentDidMount = () =>
   {
-    let currentScope = this;
-
-    axios.get('/ingredientPrices.json')
-    .then((response) => {
-      let tempIngredientsInfo = this.state.ingredientsInfo;
-      Object.keys(response.data).map(aKey => {
-        tempIngredientsInfo[aKey].price = response.data[aKey].price;
-      });
-
-      this.setState({ingredientsInfo: tempIngredientsInfo});
-
-    })
-    // .catch((error) => {console.log('Error fetching info', error)});
-  };
+};
 
 
   //Open up the load window
@@ -128,7 +114,6 @@ class PizzaBuilder extends Component
     this.setState({loadWindowActivated: !tempValue});
   };
 
-  //Load info that was fetched  - in this case, pizza composition
   loadPizzaComposition = (newComposition, newNumber) =>
   {
     this.props.onLoadInitialComposition(newComposition);

@@ -36,6 +36,16 @@ import spicesImage from './../images/spices.jpg';
 
 
 let ingredientsInfo = {
+  redsauce: {
+    price: 1,
+    image: redSauceImage,
+    display: "Red Sauce",
+  },
+  whitesauce: {
+    price: 1,
+    image: whiteSauceImage,
+    display: "White Sauce",
+  },
   pepperoni: {
     price: 3,
     image: pepperoniImage,
@@ -71,7 +81,7 @@ let ingredientsInfo = {
     image: provoloneImage,
     display: "Provolone",
   },
-  mixedCheese: {
+  asiago: {
     price: 2,
     image: asiagoImage,
     display: "Asiago",
@@ -81,15 +91,20 @@ let ingredientsInfo = {
     image: mozzarellaImage,
     display: "3 cheese blend",
   },
+  fetacheese: {
+    price: 2,
+    image: fetaCheeseImage,
+    display: "Feta Cheese",
+  },
   spices: {
-    price: 0.25,
+    price: 0,
     image: spicesImage,
     display: "Italian Seasoning",
   },
   vegetables: {
     price: 2,
     image: vegetablesImage,
-    display: "Vegetarian",
+    display: "Delux Vegetarian",
   },
     onion: {
       price: 1,
@@ -100,6 +115,16 @@ let ingredientsInfo = {
       price: 1,
       image: oliveImage,
       display: "Olives",
+    },
+    mushroom: {
+      price: 1,
+      image: mushroomImage,
+      display: "Mushrooms",
+    },
+    stuffedCrust: {
+      price: 3,
+      image: stuffedCrustImage,
+      display: "Stuffed Crust",
     },
 };
 

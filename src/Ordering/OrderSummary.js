@@ -10,17 +10,7 @@ const ordersummary = (props) => {
           <p>Toppings:</p>
           <br/>
           <ul>
-          {
-            Object.keys(props.pizzaComposition).map((aKey, index) => {
-              if(props.pizzaComposition[aKey] > 0)
-              {
-                return(
-                  <li key={'CheckoutMenu-'+aKey+'-'+index}>{props.ingredientsInfo[aKey].display}: {props.pizzaComposition[aKey]}</li>
-                );
-              }
-
-            })
-          }
+          {}
           </ul>
           <br/>
           <h3>Order Total: ${props.totalPrice}</h3>
