@@ -24,7 +24,7 @@ class CheckoutPage extends Component
           label: 'Name:',
           validationPassed: true,
         },
-        email:{
+        address:{
           elementType:'input',
           elementConfig:{
             type: 'address',
@@ -34,37 +34,11 @@ class CheckoutPage extends Component
           label: 'Address: ',
           validationPassed: true,
         },
-        deliveryOption:{
-          elementType: 'select',
-          elementConfig:{
-            options: [
-              {value:'delivered', displayValue: 'Delivery', selected:true},
-              {value:'pickedup', displayValue: 'Local pickup'}
-            ],
-          },
-          value: '',
-          label: 'Choose delivery method: ',
-          validationPassed: true,
-        },
         additionalNotes:{
           elementType:'textarea',
           value:'',
-          label:'Additional notes: ',
+          label:'Additional Instructions: ',
           validationPassed: true,
-        },
-        regularClient:{
-          elementType:'radio',
-          elementConfig:{
-            options:[
-              {value:'yes', displayValue: 'Yes', checked: false},
-              {value:'no', displayValue: 'No', checked: true},
-            ],
-            name:'regular',
-          },
-          label: 'Are you a regular client?',
-          value: '',
-          validationPassed: true,
-          specificHandler: this.radioButtonHandler,
         },
         hasCoupon:{
           elementType:'checkbox',
@@ -170,52 +144,7 @@ class CheckoutPage extends Component
   }
 
   resetButtonHandler = () => {
-    let copyForm = {...this.state.orderForm};
-
-    for(var key in copyForm)
-    {
-      copyForm[key].value = '';
-
-      switch(key)
-      {
-        case 'regularClient':
-          copyForm[key].elementConfig.options[0].checked = false;
-          copyForm[key].elementConfig.options[1].checked = true;
-        break;
-        case 'hasCoupon':
-          copyForm[key].elementConfig.checked = false;
-        break;
-
-        //Select menu
-        case '':
-          copyForm[key].elementConfig.options[0].selected = true;
-          copyForm[key].elementConfig.options[0].selected = false;
-        break;
-
-        //Coupon code disable
-        case 'couponCode':
-          copyForm[key].elementConfig.disabled = true;
-        break;
-      }
-
-    }
-    this.setState({orderForm: copyForm}, () => {
-
-      if(this.state.isValid)
-      {
-        this.verifyInput('name');
-      }
-      if(this.state.isValid)
-      {
-        this.verifyInput('email');
-      }
-
-      if(this.state.isValid)
-      {
-        this.verifyInput('couponCode');
-      }
-
-    });
+ 
   }
 
   //Click on submit -> we must verify the input
@@ -316,29 +245,7 @@ class CheckoutPage extends Component
     //Switch case for possibilities
     switch(rule.type)
     {
-      case 'required':
-        isValid.outcome = value.trim() !== "";
-        isValid.message = "must be non-empty";
-      break;
-      case 'minLength':
-        isValid.outcome = value.length >= rule.minLength;
-        isValid.message = "must be at least " + rule.minLength + " characters long";
-      break;
-      case 'maxLength':
-        isValid.outcome = value.length <= rule.maxLength;
-        isValid.message = "must be at most " + rule.maxLength + " characters long";
-      break;
-      case 'isEmail':
-        pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-        isValid.outcome = pattern.test(value);
-        isValid.message = "not a valid e-mail address";
-      break;
-      case 'isNumeric':
-        pattern = /^\d+$/;
-        isValid.outcome = pattern.test(value);
-        isValid.message = "";
-      break;
-    }
+  }
 
     //Remove message if still ok
     if(isValid.outcome)
@@ -444,10 +351,7 @@ class CheckoutPage extends Component
 
       );
   }
-
-
 }
-
 //The state ingredients
 const mapStateToProps = state => {
   return{

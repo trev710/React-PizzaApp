@@ -1,5 +1,3 @@
-//Recall that not only React, but also { Component } is needed from react
-//When we want to declare a stateful component (with class)
 import axios from 'axios';
 import React, { Component } from 'react';
 
@@ -15,15 +13,13 @@ import PizzaLoader from './../Loading/PizzaLoader.js';
 //Connect with Redux
 import { connect } from 'react-redux';
 //Import the actions
+
 import * as actions from './../store/actions/actions.js';
 
 
 
 class PizzaBuilder extends Component
 {
-
-  //We're going to need to call the constructor so we can construct our state
-  //Based on the info above.
   constructor(props)
   {
     super(props);
@@ -70,10 +66,6 @@ class PizzaBuilder extends Component
     return parseFloat(Math.round(total * 100) / 100).toFixed(2);
   };
 
-  //Click handler method in PizzaBuilder which contains IngredientBlock
-  //which in turn contians
-  //Note: we take care of the logic here since we need to activate other
-  //parts of state (saving enabled, checkout enabled, etc)
   clickHandler = (type, value) =>
   {
     //If the value is true, then we increment
@@ -136,7 +128,7 @@ class PizzaBuilder extends Component
       this.setState({ingredientsInfo: tempIngredientsInfo});
 
     })
-    .catch((error) => {console.log('Error fetching info', error)});
+    // .catch((error) => {console.log('Error fetching info', error)});
   };
 
 

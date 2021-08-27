@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from './../Special/Modal.js';
+import Modal from '../Special/Modal.js';
 import { withRouter } from 'react-router-dom';
 
 const ordersummary = (props) => {

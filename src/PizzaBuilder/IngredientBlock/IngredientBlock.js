@@ -3,12 +3,8 @@ import React from 'react';
 //Ingredients needed
 import IngredientIndividual from './IngredientIndividual.js';
 
-
-
 const IngredientBlock = (props) => {
 
-  //The classes for the button
-  //Add disabled if that is the case.
   let classesButtonCheckout = "btn btn-primary";
   let classesButtonSave = "btn btn-success";
 
@@ -32,7 +28,7 @@ const IngredientBlock = (props) => {
   let text = "";
   let color = {color: 'black'};
 
-  if(props.pizzaConfirmationNumber != 0)
+  if(props.pizzaConfirmationNumber !== 0)
   {
     if(!props.savingEnabled)
     {

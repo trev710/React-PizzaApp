@@ -12,7 +12,7 @@ const navBar = (props) => {
         <ul className="navbar-nav mr-auto">
           <NavLink className="navbar-brand" to="/" exact activeClassName="activeLink">Build your pizza</NavLink>
           <NavLink className="navbar-brand" to="/Ingredients" activeClassName="activeLink">Ingredients</NavLink>
-          <NavLink className="navbar-brand" to="/#" exact activeClassName="activeLink">Check Out</NavLink>
+          <NavLink className="navbar-brand" to="/CheckoutPage" exact activeClassName="activeLink">Check Out</NavLink>
         </ul>
       </div>
     </nav>
