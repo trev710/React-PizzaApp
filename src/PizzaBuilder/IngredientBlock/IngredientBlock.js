@@ -35,7 +35,7 @@ const IngredientBlock = (props) => {
         }
         <li className="list-group-item d-flex justify-content-between bg-light">
           <span>Total</span>
-          <strong>{props.totalPrice}$</strong>
+          <strong>${props.totalPrice}</strong>
         </li>
         <li className="list-group-item d-flex justify-content-between">
           <button type="button" className={classesButtonCheckout} onClick={() => {if(props.checkoutEnabled){props.checkoutHandler(true);}}}>Checkout</button>

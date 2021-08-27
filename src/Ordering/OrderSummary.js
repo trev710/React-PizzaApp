@@ -17,7 +17,9 @@ const ordersummary = (props) => {
                 return(
                   <li key={'CheckoutMenu-'+aKey+'-'+index}>{props.ingredientsInfo[aKey].display}: {props.pizzaComposition[aKey]}</li>
                 );
-              } 
+              } else {
+                return ""
+              }
 
             })
           }
