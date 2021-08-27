@@ -1,11 +1,9 @@
 import React from 'react';
-
 import { library } from '@fortawesome/fontawesome-svg-core';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 //Ingredients needed
-import IngredientIndividual from './IngredientIndividual.js';
+// import IngredientIndividual from './IngredientIndividual.js';
 
 library.add(faMinus, faPlus);
 

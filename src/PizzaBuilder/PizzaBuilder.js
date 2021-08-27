@@ -9,12 +9,6 @@ import ShowScreen from './ShowScreen/ShowScreen.js';
 import OrderSummary from './../Ordering/OrderSummary.js';
 import PizzaLoader from './../Loading/PizzaLoader.js';
 
-//Connect with Redux
-import { connect } from 'react-redux';
-//Import the actions
-import * as actions from './../store/actions/actions.js';
-
-
 
 class PizzaBuilder extends Component
 {
@@ -192,13 +186,9 @@ const mapStateToLocalProps = state => {
 
 const mapDispatchActionsToProps = dispatch => {
   return{
-    onLoadInitialComposition: (initialComposition) => dispatch({type:actions.COMPOSITION_INITIALIZE, payload: initialComposition}),
-    onIncrementIngredient: (ingredientType) => dispatch({type:actions.COMPOSITION_INCREMENT, payload: {ingredient: ingredientType}}),
-    onDecrementIngredient: (ingredientType) => dispatch({type:actions.COMPOSITION_DECREMENT, payload: {ingredient: ingredientType}}),
-    pizzaSavedHandler: (value) => dispatch({type:actions.BUILD_SAVED, payload: {isSaved: value}}),
-    pizzaConfirmationNumberHandler: (value) => dispatch({type:actions.BUILD_CONFIRMATIONNUMBER, payload: {confirmationNumber: value}}),
+    
   }
 };
 
 
-export default connect(mapStateToLocalProps, mapDispatchActionsToProps)(PizzaBuilder);
+export default (mapStateToLocalProps, mapDispatchActionsToProps)(PizzaBuilder);

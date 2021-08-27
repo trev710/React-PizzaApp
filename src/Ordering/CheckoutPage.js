@@ -3,7 +3,7 @@ import Input from './../Special/Input.js';
 
 //The chosen ingredients info
 import { connect } from 'react-redux';
-import { ingredientsInfoStatic, pizzaCrustImage } from './../Special/IngredientsInfo.js';
+import { ingredientsInfoStatic } from './../Special/IngredientsInfo.js';
 
 
 class CheckoutPage extends Component
@@ -121,7 +121,7 @@ class CheckoutPage extends Component
     let messages = [];
 
 
-    let checkResult;
+    // let checkResult;
 
 
     let copyState = {...this.state};
@@ -141,7 +141,6 @@ class CheckoutPage extends Component
   {
     //Start from true, can only go to negative
     let isValid = {outcome: true, message: ''};
-    let pattern= '';
 
     //Switch case for possibilities
     switch(rule.type)
@@ -237,16 +236,7 @@ class CheckoutPage extends Component
         {ingredientInfo}
         <h2>Checkout info:</h2>
         {form}
-        <div className="errorMsgs">
-          {
-            this.state.errorMessages.map((errorMsg, index) => {
-              if(errorMsg != '')
-              {
-                return <h2 key={'error'+index}>{errorMsg}</h2>;
-              }
-            })
-          }
-        </div>
+  
       </div>
 
       );

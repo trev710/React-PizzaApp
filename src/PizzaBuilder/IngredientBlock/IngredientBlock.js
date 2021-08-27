@@ -6,7 +6,7 @@ import IngredientIndividual from './IngredientIndividual.js';
 const IngredientBlock = (props) => {
 
   let classesButtonCheckout = "btn btn-primary";
-  let classesButtonSave = "btn btn-success";
+  // let classesButtonSave = "btn btn-success";
 
   //If no checkout, disabled class as well
   if(!props.checkoutEnabled)
@@ -14,10 +14,10 @@ const IngredientBlock = (props) => {
     classesButtonCheckout += " disabled";
   }
 
-  if(!props.savingEnabled || !props.checkoutEnabled)
-  {
-    classesButtonSave += " disabled";
-  }
+  // if(!props.savingEnabled || !props.checkoutEnabled)
+  // {
+  //   classesButtonSave += " disabled";
+  // }
 
   let text = "";
   let color = {color: 'black'};
