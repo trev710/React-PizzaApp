@@ -37,9 +37,7 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 
-  //Redux asks us to return the initial state by default
-  //And since all are return statements, no problem
-  return state;
+  // return state;
 };
 
 export default reducer;

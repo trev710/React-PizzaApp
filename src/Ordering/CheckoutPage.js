@@ -183,7 +183,7 @@ class CheckoutPage extends Component
             return(
               <div className="singleIngredient" key={element.id}>
                 <h4>{element.details.name}</h4>
-                <img src={element.details.image}/>
+                <img src={element.details.image} alt="ingredient"/>
                 <h3>{element.details.quantity}</h3>
               </div>
             );
@@ -191,6 +191,10 @@ class CheckoutPage extends Component
         }
       </div>
     );
+
+
+
+
     const formArray = [];
 
     Object.keys(this.state.orderForm).forEach(key => {
@@ -236,7 +240,16 @@ class CheckoutPage extends Component
         {ingredientInfo}
         <h2>Checkout info:</h2>
         {form}
-  
+        {/* <div className="errorMsgs">
+          {
+            this.state.errorMessages.map((errorMsg, index) => {
+              if(errorMsg !== '')
+              {
+                return <h2 key={'error'+index}>{errorMsg}</h2>;
+              }
+            })
+          }
+        </div> */}
       </div>
 
       );
