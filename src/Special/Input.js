@@ -42,25 +42,7 @@ const input = (props) => {
         </select>
       ;
     break;
-    case('radio'):
-      inputElement =
-        <div className="radioContainer">
-        {
-          props.elementConfig.options.map((anOption, index) => (
-              <div className="radioSingle" key={props.id+index+'radio'}>
-                <input type="radio"
-                  name={props.elementConfig.name}
-                  value={anOption.value}
-                  checked={anOption.checked}
-                  onChange={() => {props.specificHandler(index)}}
-                />
-                <label>{anOption.displayValue}</label>
-              </div>
-          ))
-        }
-        </div>
-      ;
-    break;
+
     default:
       inputElement =
       <input

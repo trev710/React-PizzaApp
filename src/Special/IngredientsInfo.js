@@ -14,7 +14,6 @@ import asiagoImage from './../images/asiago.jpg'
 import provoloneImage from './../images/provolone.jpg'
 import fetaCheeseImage from './../images/fetaCheese.jpg';
 import mozzarellaImage from './../images/mozarella.jpg';
-// import swissCheeseImage from './../images/swissCheese.jpg';
 
 
 //meat
