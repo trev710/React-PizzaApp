@@ -14,7 +14,7 @@ const ingredientList = () => {
   console.log('the ingredients object', ingredientsInfoStatic);
   return(
     <main role="main" className="container">
-      <h2>Here are the ingredients that the pizza uses:</h2>
+      <h2>Ingredients List:</h2>
       <div className="container ingredientList">
       {
         Object.keys(ingredientsInfoStatic).map((ingredientKey, index) =>  {
