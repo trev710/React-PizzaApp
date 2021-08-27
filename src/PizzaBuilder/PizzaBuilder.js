@@ -68,16 +68,13 @@ class PizzaBuilder extends Component
 
   clickHandler = (type, value) =>
   {
-    //If the value is true, then we increment
     if(value)
     {
-      //Increment? always
       this.props.onIncrementIngredient(type);
       this.props.pizzaSavedHandler(false);
     }
     else
     {
-      //Decrement? only if not 0!
       if(this.props.pizzaComposition[type] > 0)
       {
         this.props.onDecrementIngredient(type);
@@ -88,14 +85,12 @@ class PizzaBuilder extends Component
     this.checkoutPageToggler(false);
   };
 
-  //Enable or disable button based on a condition
-  //Now: only crust
   enableCheckoutButton = () =>
   {
     return this.calculateTotalPrice() !== parseFloat(Math.round(this.state.basePrice * 100) / 100).toFixed(2);
   };
 
-  //Reset the pizza
+
   resetPizza = () =>
   {
     this.props.onLoadInitialComposition(this.generateEmptyPizza());
@@ -104,27 +99,24 @@ class PizzaBuilder extends Component
 
   };
 
-  //Modify the checkoutActivated
+
   checkoutPageToggler = (bool) =>
   {
     this.setState({checkoutPageActivated: bool});
   };
 
-  //Component did mount
+
   componentDidMount = () =>
   {
     let currentScope = this;
 
     axios.get('/ingredientPrices.json')
     .then((response) => {
-      //Update the prices now
-      //For each ingredient, modify its price
       let tempIngredientsInfo = this.state.ingredientsInfo;
       Object.keys(response.data).map(aKey => {
         tempIngredientsInfo[aKey].price = response.data[aKey].price;
       });
 
-      //However, this is a nested object so re-render not executed!
       this.setState({ingredientsInfo: tempIngredientsInfo});
 
     })
