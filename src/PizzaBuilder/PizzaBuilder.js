@@ -101,11 +101,9 @@ class PizzaBuilder extends Component
     this.setState({checkoutPageActivated: bool});
   };
 
-
   componentDidMount = () =>
   {
 };
-
 
   //Open up the load window
   toggleLoadWindow = () =>
@@ -153,7 +151,7 @@ class PizzaBuilder extends Component
               {orderWindow}
 
               <div className="py-5 text-center">
-                <h2>FlatIron Pizza</h2>
+                <h2>Flatiron Pizza App</h2>
                 <p className="lead">Add What Toppings You Like Here</p>
               </div>
 
