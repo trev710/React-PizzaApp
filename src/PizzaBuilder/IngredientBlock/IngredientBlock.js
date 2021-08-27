@@ -50,11 +50,9 @@ const IngredientBlock = (props) => {
           <strong>{props.totalPrice}$</strong>
         </li>
         <li className="list-group-item d-flex justify-content-between">
-          {/* <button type="button" className={classesButtonSave} onClick={() => {if(props.checkoutEnabled && props.savingEnabled){props.saveHandler();}}}>Save Pizza</button> */}
           <button type="button" className={classesButtonCheckout} onClick={() => {if(props.checkoutEnabled){props.checkoutHandler(true);}}}>Checkout</button>
         </li>
-        <li className="list-group-item d-flex justify-content-between">
-        {/* <button type="button" className="btn btn-dark" onClick={props.toggleLoadWindow}>Load pizza</button> */}
+        <li className="list-group-item d-flex justify-content-between"> 
         </li>
       </ul>
       <p className="notificationSaving" style={color}>

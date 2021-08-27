@@ -40,28 +40,6 @@ class CheckoutPage extends Component
           label:'Additional Instructions: ',
           validationPassed: true,
         },
-        hasCoupon:{
-          elementType:'checkbox',
-          elementConfig:{
-            type: "checkbox",
-            checked: false,
-          },
-          value:false,
-          label:'Do you have a coupon code?',
-          validationPassed: true,
-          specificHandler: this.checkedCoupon,
-        },
-        couponCode:{
-          elementType: 'input',
-          elementConfig:{
-            type: 'text',
-            placeholder: 'Coupon code',
-            disabled: true,
-          },
-          value: '',
-          label:'Coupon: ',
-          validationPassed: true,
-        }
       },
       loading: false,
       isValid: true,
@@ -120,28 +98,7 @@ class CheckoutPage extends Component
     this.setState({orderForm: modifiedState}, () => {this.verifyInput('couponCode')});
   }
 
-  //Clicking on a radio button option
-  radioButtonHandler = (index) => {
 
-    //Remove select for all radio buttons initially
-    const modifiedState = {...this.state.orderForm};
-
-
-    for(let i=0; 
-      i<modifiedState.regularClient.elementConfig.options.length; i++)
-    {
-      if(index === i)
-      {
-        modifiedState.regularClient.elementConfig.options[i].checked = true;
-      }
-      else
-      {
-        modifiedState.regularClient.elementConfig.options[i].checked = false;
-      }
-    }
-
-    this.setState({orderForm: modifiedState});
-  }
 
   resetButtonHandler = () => {
  

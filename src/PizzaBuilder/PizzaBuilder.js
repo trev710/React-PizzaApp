@@ -13,7 +13,6 @@ import PizzaLoader from './../Loading/PizzaLoader.js';
 //Connect with Redux
 import { connect } from 'react-redux';
 //Import the actions
-
 import * as actions from './../store/actions/actions.js';
 
 
@@ -50,8 +49,6 @@ class PizzaBuilder extends Component
 
     return tempPizzaObject;
   };
-
-
 
   //Calculate total price
   calculateTotalPrice = () =>
