@@ -166,62 +166,6 @@ class CheckoutPage extends Component
 
     let checkResult;
 
-    switch(elementKey)
-    {
-      case 'name':
-        checkResult = this.standardVerification(this.state.orderForm.name.value, {type: 'required'});
-        validity = checkResult.outcome;
-        if(checkResult.message !== '')
-        {
-          messages.push('Name: ' + checkResult.message);
-        }
-
-        checkResult = this.standardVerification(this.state.orderForm.name.value, {type: 'minLength', minLength: 2});
-        validity = checkResult.outcome && validity;
-        if(checkResult.message !== '')
-        {
-          messages.push('Name: ' + checkResult.message);
-        }
-
-        checkResult = this.standardVerification(this.state.orderForm.name.value, {type: 'maxLength', maxLength: 20});
-        validity = checkResult.outcome && validity;
-
-        if(checkResult.message !== '')
-        {
-          messages.push('Name: ' + checkResult.message);
-        }
-
-      break;
-
-      case 'email':
-      checkResult = this.standardVerification(this.state.orderForm.email.value, {type: 'isEmail'});
-      validity = checkResult.outcome && validity;
-      if(checkResult.message !== '')
-      {
-        messages.push('Email: ' + checkResult.message);
-      }
-
-      checkResult = this.standardVerification(this.state.orderForm.email.value, {type: 'minLength', minLength:4});
-      validity = checkResult.outcome && validity;
-      if(checkResult.message !== '')
-      {
-        messages.push('Email: ' + checkResult.message);
-      }
-
-      break;
-      case 'couponCode':
-        if(this.state.orderForm.hasCoupon.elementConfig.checked)
-        {
-          checkResult = this.standardVerification(this.state.orderForm.couponCode.value, {type: 'required'});
-          validity = checkResult.outcome && validity;
-          if(checkResult.message !== '')
-          {
-            messages.push('Coupon code: ' + checkResult.message);
-          }
-        }
-      break;
-    }
-
 
     let copyState = {...this.state};
 
@@ -325,7 +269,6 @@ class CheckoutPage extends Component
           })
         }
         <div className="form-group buttonContainer">
-        <button type="button" className="btn btn-secondary" onClick={() => {this.resetButtonHandler();}}>Reset</button>
         <button type="button" className="btn btn-primary" onClick={() => {this.submitButtonHandler();}} disabled={(!this.state.isValid)}>Submit</button>
         </div>
       </form>
